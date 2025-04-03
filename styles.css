@@ -1,0 +1,87 @@
+/* Reset and Basics */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    cursor: url('ronaldo.png'), auto; /* Custom Ronaldo cursor */
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(45deg, #ff0000, #000); /* Red-to-black gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Headline */
+.hero-content h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #ff0000; /* Neon red glow */
+    animation: flicker 1.5s infinite alternate;
+}
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Button */
+.cta-button {
+    padding: 20px 40px;
+    font-size: 2rem;
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #ff0000;
+    transition: transform 0.2s;
+}
+.cta-button:hover {
+    transform: scale(1.1); /* Grows on hover */
+}
+
+/* Ronaldo Icon */
+.ronaldo-icon {
+    margin-top: 20px;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 0 10px #ffd700; /* Gold glow */
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.ronaldo-icon:hover {
+    transform: rotate(360deg); /* Spins on hover */
+}
+.ronaldo-icon.active {
+    animation: jump 0.5s ease; /* Jumps when clicked */
+}
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+/* Shake Animation for Button */
+@keyframes shake {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-5px, 5px); }
+    50% { transform: translate(5px, -5px); }
+    75% { transform: translate(-5px, 0); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2rem; }
+    .cta-button { font-size: 1.5rem; padding: 15px 30px; }
+    .ronaldo-icon { font-size: 2rem; }
+}
